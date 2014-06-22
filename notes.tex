@@ -1,7 +1,58 @@
 \documentclass{article}
+\usepackage[]{amsmath}
+\title{Elevator Scheduling}
+\author{Robert Foy}
+\date{ }
 
 \begin{document}
 
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
 This project is an experimentation around appraising different elevator scheduling algorithms.
+
+\section{Existing Algorithms}
+\begin{itemize}
+   \item Nearest Car \hfill \\
+   Assign the elevator best placed to answer the call, based on a Figure of Suitability (FS).
+   The figure of suitability is derived from three criteria:
+   \begin{enumerate}
+      \item $E \rightarrow C_{F} \land C_{D} = E{_D} \iff FS = (N + 2) - d$
+      \item $E \rightarrow C_{F} \land C_{D} = \neg E_{D} \iff FS = (N + 1) -d$
+      \item $E \leftarrow C_{F} \iff FS = 1$
+   \end{enumerate}
+   Where:
+   \begin{align*}
+      &E \rightarrow C_{F} = \text{Elevator is moving towards the caller} \\
+      &E \leftarrow C_{F} = \text{Elevator is moving away from the caller} \\
+      &C_{D} = \text{Caller Direction} \\
+      &E_{D} = \text{Elevator Direction} \\
+      &FS = \text{Figure of Suitability} \\
+      &N = \text{Number of floors} \\
+      &d = \text{Difference in floors between elevator location and the current caller}
+   \end{align*}
+   \item Fixed Sector Common Sector System (FSO) \hfill \\
+   Building is divided into sectors, one for search elevator. Elevators preferentially serve their own sector.
+   \item Fixed Sectoring Priority Timed System (FS4) \hfill \\
+   Building is divided into up sectors and down sectors. Elevators only act in their up-down sectors.
+   \item Dynamic Sectoring System  \hfill \\
+   Floors are grouped into dynamic sectors, which are assigned to elevators. The sectors are allocated based on their size and location.
+\end{itemize}
+
+\section{Ideas to Explore}
+\begin{itemize}
+   \item DSL to Represent the Scheduling Algorithm
+   \item Potential for Memoryless Implementation
+   \item Genetic algorithms
+   \item Encoding as cellular automata
+\end{itemize}
+
+\section{Code Entities}
+\begin{itemize}
+  \item Lifts
+  \item People
+\end{itemize}
 
 \end{document}
