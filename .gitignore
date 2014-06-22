@@ -2,3 +2,7 @@
 *.obj
 *~
 *.swp
+*.dvi
+*.pdf
+*.log
+*.aux
