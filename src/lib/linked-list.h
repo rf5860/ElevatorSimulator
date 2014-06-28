@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 struct link {
 	struct link* next;
 	int data;
@@ -5,7 +7,7 @@ struct link {
 
 typedef struct link Link;
 
-void append(link* head, int new_data);
-void append(link* head, link* new_item);
-bool remove(link* head, int data);
-link* create(int data);
+void append_data(Link* head, int new_data);
+void append(Link* head, Link* new_item);
+bool remove(Link* head, int data);
+Link* create(int data);

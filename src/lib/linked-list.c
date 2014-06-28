@@ -1,20 +1,25 @@
-void append(link* head, int new_data) {
+#include "linked-list.h"
+#include <stddef.h>
+
+void append_data(Link* head, int new_data) {
 	append(head, create(new_data));
 }
 
-void append(link* head, link* new_item) {
+void append(Link* head, Link* new_item) {
 	new_item->next = head->next;
 	head->next = new_item;
 }
 
-void remove(link* head, int data) {
-	struct link* iter = head;
+bool remove(Link* head, int data) {
+	Link* iter = head;
 
 	for (iter = head; iter != NULL; iter = iter->next) {
-	
+		
 	}
+
+	return false;
 }
 
-link* create(int data) {
+Link* create(int data) {
 
 }
