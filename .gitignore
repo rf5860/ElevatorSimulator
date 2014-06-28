@@ -6,4 +6,5 @@
 *.pdf
 *.log
 *.aux
+*.out
 *.toc
